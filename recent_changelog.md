@@ -1,5 +1,10 @@
-## 2023.06 Update
-1. (disabled by default) New deflation mechanisms: partial fee burning and blackhole address
-2. Storage-contract improvement
+## 2023.12 Update
 
-Besides the work of the core team, this update is based on the efforts of @DearJohnDoe from Tonbyte (Storage-contract improvement).
+1. Optimized message queue handling, now queue cleaning speed doesn't depend on total queue size
+     * Cleaning delivered messages using lt augmentation instead of random search / consequtive walk
+     * Keeping root cell of queue message in memory until outdated (caching)
+2. Changes to block collation/validation limits
+3. Stop accepting new external message if message queue is overloaded
+4. Introducing conditions for shard split/merge based on queue size
+
+Read [more](https://blog.ton.org/technical-report-december-5-inscriptions-launch-on-ton) on that update.
